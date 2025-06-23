@@ -1,0 +1,35 @@
+ceaser cipher
+
+python:
+
+
+def caesar_cipher():
+    encrypt = ""
+    decrypt = ""
+
+    msg = input("Enter the message: ")
+    shift = int(input("Enter the shift: "))
+
+    for letter in msg:
+        if letter.isalpha():
+            base = ord('A') if letter.isupper() else ord('a')
+            en = chr((ord(letter) - base + shift) % 26 + base)
+            encrypt += en
+        else:
+            encrypt += letter
+
+    for letter in encrypt:
+        if letter.isalpha():
+            base = ord('A') if letter.isupper() else ord('a')
+            de = chr((ord(letter) - base - shift + 26) % 26 + base)
+            decrypt += de
+        else:
+            decrypt += letter
+
+    print("Encrypted message:", encrypt)
+    print("Decrypted message:", decrypt)
+
+
+caesar_cipher()
+
+python program...
